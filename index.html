@@ -157,11 +157,15 @@ async function sendMsg(){
   if(!key){box.innerHTML+=`<div class="msg bot">⚠️ لازم تحفظ مفتاح Gemini من صفحة الرئيسية الأول.</div>`;return;}
   box.innerHTML+=`<div class="msg bot" id="typing">⏳ بفكر...</div>`;box.scrollTop=box.scrollHeight;
   try{
-    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,{
+    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({system_instruction:{parts:[{text:SYSTEM}]},contents:[{parts:[{text:t}]}]})});
     const d=await r.json();
-    const ans=d.candidates?.[0]?.content?.parts?.[0]?.text||'مش قدرت أجاوب، جرب تاني.';
+    let ans=d.candidates?.[0]?.content?.parts?.[0]?.text;
+    if(!ans){
+      const err=d.error?.message||JSON.stringify(d).slice(0,300);
+      ans='⚠️ المشكلة من جوجل: '+err;
+    }
     document.getElementById('typing').remove();
     box.innerHTML+=`<div class="msg bot">${ans}</div>`;
   }catch(e){document.getElementById('typing').remove();box.innerHTML+=`<div class="msg bot">❌ حصل خطأ. اتأكد من النت والمفتاح.</div>`;}
