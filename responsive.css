@@ -1,0 +1,79 @@
+/* ============================================================
+   البوت القبطي التعليمي — responsive.css
+   تابلت / موبايل / شاشات صغيرة جدًا
+   ============================================================ */
+
+/* ---------- تابلت ---------- */
+@media (max-width: 900px) {
+  main { max-width: 100%; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}
+
+/* ---------- موبايل ---------- */
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+
+  /* الهيدر يبقى مضغوطًا */
+  .site-header { padding: 8px 10px; }
+  .brand h1 { font-size: .95rem; }
+  .brand-sub { display: none; }
+  .brand-emoji { font-size: 1.45rem; }
+
+  /* التنقل العلوي يتحول لقائمة منسدلة */
+  .main-nav {
+    position: static; flex-direction: column; gap: 4px;
+    padding: 0 10px; max-height: 0; overflow: hidden; border-bottom: none; transition: max-height .3s ease;
+  }
+  .main-nav.open {
+    max-height: 70vh; overflow-y: auto; padding: 8px 10px; border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+  }
+  .main-nav .nav-link { border-radius: 12px; text-align: start; padding: 10px 12px; font-size: .9rem; }
+  .only-mobile { display: inline-flex; }
+
+  /* الشريط السفلي */
+  .bottom-nav { display: flex; }
+  .site-footer { padding-bottom: calc(var(--nav-h) + 30px + var(--safe-b)); }
+
+  /* شبكات أضيق */
+  .grid, .grid.two { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .stat-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+  .form-grid { grid-template-columns: 1fr; }
+  .card { padding: 12px; border-radius: 14px; }
+  .hero { padding: 14px 13px; }
+  .hero h2 { font-size: 1.15rem; }
+  .msg { max-width: 96%; }
+
+  /* أزرار أكبر للمس */
+  .btn { padding: 11px 15px; font-size: .88rem; }
+  .chip { padding: 8px 13px; font-size: .84rem; }
+
+  /* الذاكرة 4 أعمدة تبقى مقروءة */
+  .memory-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .mem-card { font-size: .8rem; }
+  .letter-btn { min-width: 42px; min-height: 42px; font-size: 1.1rem; }
+
+  /* الجداول العريضة تصبح قابلة للتمرير */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* ---------- شاشات صغيرة جدًا ---------- */
+@media (max-width: 380px) {
+  .grid, .grid.two { grid-template-columns: 1fr 1fr; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .bottom-nav .bn-item { font-size: .56rem; }
+  .brand-emoji { font-size: 1.25rem; }
+  .btn-row .btn { flex: 1 1 100%; }
+}
+
+/* ---------- شاشات عريضة ---------- */
+@media (min-width: 1100px) {
+  main { max-width: 1080px; }
+}
+
+/* ---------- ارتفاع منخفض (أفقي على الموبايل) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-nav { position: static; }
+  .bottom-nav { height: calc(48px + var(--safe-b)); }
+  :root { --nav-h: 48px; }
+}

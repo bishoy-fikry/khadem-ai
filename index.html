@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="البوت القبطي التعليمي (خادم) — مكتبة ألحان بتدريب عملي، اللغة القبطية، الطقوس والسنكسار، الألعاب والمسابقات، ومساعد محلي بدون أي مفتاح API.">
+<meta name="theme-color" content="#0f1020">
+<meta name="color-scheme" content="dark light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>✝️ البوت القبطي التعليمي — خادم</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='48' font-size='52'%3E%E2%9C%9D%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<a class="skip-link" href="#view">تخطَّ إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-emoji" aria-hidden="true">✝️</span>
+    <div>
+      <h1 id="appTitle">البوت القبطي التعليمي <span class="small muted">— خادم</span></h1>
+      <p class="brand-sub">الألحان • القبطي • الطقوس • الألعاب • المساعد المحلي</p>
+    </div>
+  </div>
+  <div class="header-tools">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل الوضع الليلي والنهاري" aria-pressed="false" title="تبديل الوضع">🌙</button>
+    <button class="icon-btn only-mobile" id="navToggle" type="button" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="mainNav" title="القائمة">☰</button>
+  </div>
+</header>
+
+<nav id="mainNav" class="main-nav" aria-label="التنقل الرئيسي"></nav>
+
+<p id="routeAnnounce" class="small muted center" aria-live="polite" style="margin:6px 0 0"></p>
+
+<main id="view" tabindex="-1">
+  <section class="card loading-card">
+    <p class="loader" role="status">جارٍ تجهيز قاعدة المعرفة</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>مشروع تعليمي — <b>البوت القبطي التعليمي (خادم)</b> <span id="appVersion" class="small muted"></span></p>
+  <p class="small"><span id="poolBadge">…</span></p>
+  <p class="small">
+    <a class="link-btn" href="#/hymns">🎵 الألحان</a> ·
+    <a class="link-btn" href="#/games">🎮 الألعاب</a> ·
+    <a class="link-btn" href="#/bot">🤖 اسأل خادم</a> ·
+    <a class="link-btn" href="#/sources">🔗 سجل المصادر</a> ·
+    <a class="link-btn" href="#/more">⋯ المزيد</a> ·
+    <a class="link-btn" href="#/admin">⚙ الإدارة</a> ·
+    <a class="link-btn" href="tests.html">✅ الاختبارات</a>
+  </p>
+  <p class="small muted">
+    «معلومة موثّقة أو لا معلومة» — لا نخمّن، ولا ننسخ محتوى محميًا بحقوق النشر، ولا نضع أي مفتاح API في الموقع.
+    المحتوى تعليمي للخدام ويحتاج مراجعة كنسية قبل التعليم الرسمي.
+  </p>
+</footer>
+
+<nav id="bottomNav" class="bottom-nav" aria-label="تنقل سريع"></nav>
+
+<noscript>
+  <section class="card warn-card">
+    <h3>⚠️ الجافاسكربت مُعطَّل</h3>
+    <p>هذا الموقع يعمل بالكامل في المتصفح. من فضلك فعّل الجافاسكربت لعرض الألحان والألعاب والمساعد المحلي.</p>
+  </section>
+</noscript>
+
+<!-- =====================================================================
+     ترتيب التحميل مهم:
+     config ← core ← data ← core(مساعد/بحث) ← games ← views ← app
+     لا يوجد أي سكربت مضمّن داخل الصفحة (كلها ملفات خارجية) — أكثر أمانًا
+     وأسهل صيانة، ولا يوجد أي مفتاح API في أي ملف.
+     ===================================================================== -->
+<script src="js/config.js"></script>
+
+<script src="js/core/util.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/analytics.js"></script>
+<script src="js/core/api.js"></script>
+<script src="js/core/ui.js"></script>
+
+<script src="js/data/sources.js"></script>
+<script src="js/data/hymns.js"></script>
+<script src="js/data/coptic-lang.js"></script>
+<script src="js/data/content.js"></script>
+<script src="js/data/liturgy.js"></script>
+<script src="js/data/questions.js"></script>
+
+<script src="js/core/bot.js"></script>
+<script src="js/core/search.js"></script>
+
+<script src="js/games/quiz.js"></script>
+<script src="js/games/games.js"></script>
+<script src="js/games/leaderboard.js"></script>
+
+<script src="js/views/router.js"></script>
+<script src="js/views/home.js"></script>
+<script src="js/views/hymns.js"></script>
+<script src="js/views/games.js"></script>
+<script src="js/views/quiz.js"></script>
+<script src="js/views/coptic.js"></script>
+<script src="js/views/ask.js"></script>
+<script src="js/views/search.js"></script>
+<script src="js/views/library.js"></script>
+<script src="js/views/sources-view.js"></script>
+<script src="js/views/liturgy.js"></script>
+<script src="js/views/profile.js"></script>
+<script src="js/views/leaderboard.js"></script>
+<script src="js/views/more.js"></script>
+<script src="js/views/admin.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
