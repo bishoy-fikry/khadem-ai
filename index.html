@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="البوت القبطي التعليمي — الألحان، السنكسار، الطقوس، الشمامسة، المسابقات، والمساعد الذكي. مشروع تخرج.">
+<meta name="theme-color" content="#1a1a2e">
+<title>✝️ البوت القبطي التعليمي — خادم AI</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='48' font-size='52'%3E%E2%9C%9D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<a class="skip-link" href="#view">تخطَّ إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-emoji" aria-hidden="true">✝️</span>
+    <div>
+      <h1 id="appTitle">البوت القبطي التعليمي <span class="small muted">— خادم AI</span></h1>
+      <p class="brand-sub">الألحان • السنكسار • الطقوس • الشمامسة • المسابقات • المساعد الذكي</p>
+    </div>
+  </div>
+  <div class="header-tools">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل الوضع الليلي والنهاري" title="تبديل الوضع">🌙</button>
+    <button class="icon-btn only-mobile" id="navToggle" type="button" aria-label="فتح قائمة التنقل" aria-expanded="false" aria-controls="mainNav" title="القائمة">☰</button>
+  </div>
+</header>
+
+<nav id="mainNav" class="main-nav" aria-label="التنقل الرئيسي"></nav>
+
+<main id="view" tabindex="-1">
+  <section class="card loading-card">
+    <p class="loader" role="status">جارٍ تجهيز قاعدة المعرفة…</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>مشروع تخرج — <b>البوت القبطي التعليمي</b> <span id="appVersion" class="small muted"></span></p>
+  <p class="small">
+    <span id="poolBadge">…</span>
+    ·
+    <button type="button" class="link-btn" data-go="#/sources">🔗 سجل المصادر</button>
+    ·
+    <button type="button" class="link-btn" data-go="#/admin">⚙️ لوحة الإدارة</button>
+    ·
+    <a href="tests.html">✅ اختبارات المشروع</a>
+    ·
+    <button type="button" class="link-btn" data-go="#/profile">👤 ملفي</button>
+  </p>
+  <p class="small muted">المحتوى تعليمي للخدام، ويحتاج مراجعة كنسية قبل التعليم الرسمي. لا نخترع مصادر ولا ننسخ محتوى محميًا بحقوق النشر.</p>
+</footer>
+
+<noscript>
+  <section class="card warn-card">
+    <h3>⚠️ الجافاسكربت مُعطَّل</h3>
+    <p>هذا الموقع يعمل بالكامل في المتصفح. من فضلك فعّل الجافاسكربت لعرض المسابقات والبحث والمساعد الذكي.</p>
+  </section>
+</noscript>
+
+<!-- ============ الترتيب مهم: الإعدادات → النواة → البيانات → الأنطمة → الصفحات → التشغيل ============ -->
+<script src="js/config.js"></script>
+
+<script src="js/core/util.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/analytics.js"></script>
+
+<script src="js/data/sources.js"></script>
+<script src="js/data/content.js"></script>
+<script src="js/data/coptic-lang.js"></script>
+<script src="js/data/questions.js"></script>
+
+<script src="js/core/api.js"></script>
+<script src="js/core/search.js"></script>
+<script src="js/core/assistant.js"></script>
+
+<script src="js/games/quiz.js"></script>
+<script src="js/games/leaderboard.js"></script>
+
+<script src="js/views/router.js"></script>
+<script src="js/views/home.js"></script>
+<script src="js/views/ask.js"></script>
+<script src="js/views/search.js"></script>
+<script src="js/views/quiz.js"></script>
+<script src="js/views/library.js"></script>
+<script src="js/views/sources-view.js"></script>
+<script src="js/views/coptic.js"></script>
+<script src="js/views/profile.js"></script>
+<script src="js/views/leaderboard.js"></script>
+<script src="js/views/admin.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
